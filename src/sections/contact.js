@@ -3,6 +3,9 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 import { BgImage } from "gbimage-bridge"
+import { RiFacebookCircleFill } from "react-icons/ri"
+import { AiFillTwitterCircle } from "react-icons/ai"
+import { FiInstagram } from "react-icons/fi"
 
 const Contact = () => {
   const { backgroundImage123 } = useStaticQuery(graphql`
@@ -23,7 +26,7 @@ const Contact = () => {
     <StyledMain>
       <BgImage image={pluginImage} className="masthead">
         <h1>Contact US</h1>
-        <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl py-10 px-10">
+        <div className="mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl py-10 px-10 mt-16">
           <div>
             <div className="md:flex">
               <div className="md:flex-shrink-0">
@@ -73,12 +76,26 @@ const Contact = () => {
               <div className="px-14">
                 <div className="tracking-wide font-bold text-xl">Address</div>
                 <div className="flex flex-col">
-                  <a href="https://www.facebook.com/playgameplan/">
-                    playgameplan
+                  <a
+                    href="https://www.facebook.com/playgameplan/"
+                    className="m-4"
+                  >
+                    <p>
+                      <RiFacebookCircleFill /> <span>playgameplan</span>
+                    </p>
                   </a>
-                  <a href="https://twitter.com/playgameplan">playgameplan</a>
-                  <a href="https://www.instagram.com/play_gameplan/">
-                    playgameplan
+                  <a href="https://twitter.com/playgameplan" className="m-4">
+                    <p>
+                      <AiFillTwitterCircle /> playgameplan
+                    </p>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/play_gameplan/"
+                    className="m-4"
+                  >
+                    <p>
+                      <FiInstagram /> play_gameplan
+                    </p>
                   </a>
                 </div>
               </div>
@@ -92,19 +109,6 @@ const Contact = () => {
 
 export default Contact
 
-// const MainDiv = styled.div`
-//   background: blue;
-
-//   h1 {
-//     font-size: 64px;
-//     font-family: Roboto Slab;
-//     font-style: normal;
-//     font-weight: bold;
-//     line-height: 84px;
-//     text-align: center;
-//   }
-// `
-
 const StyledMain = styled.main`
   margin: 0 auto;
   min-height: calc(100vh - (6rem + 4rem));
@@ -116,10 +120,8 @@ const StyledMain = styled.main`
   .masthead {
     width: 100%;
     min-height: 80vh;
-
-    justify-content: center;
-    align-items: center;
     padding: 3rem;
+
     h1 {
       text-align: center;
       font-size: 7vh;

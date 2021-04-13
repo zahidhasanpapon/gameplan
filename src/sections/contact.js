@@ -67,7 +67,7 @@ const Contact = () => {
                         placeholder="Your message"
                       />
                     </div>
-                    <button class="uppercase mx-auto shadow bg-yellow-600 hover:bg-yellow-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded mt-4">
+                    <button className="uppercase mx-auto shadow bg-yellow-600 hover:bg-yellow-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded mt-4">
                       Send
                     </button>
                   </form>

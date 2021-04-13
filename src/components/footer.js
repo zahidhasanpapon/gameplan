@@ -17,20 +17,20 @@ const Footer = () => {
               <span> | </span>
               <a
                 href="#"
-                class="px-4 font-medium hover:underline hover:text-gray-400"
+                className="px-4 font-medium hover:underline hover:text-gray-400"
               >
                 Privacy Policy
               </a>
               <span> | </span>
               <a
                 href="#"
-                class="px-4 font-medium hover:underline hover:text-gray-400"
+                className="px-4 font-medium hover:underline hover:text-gray-400"
               >
                 Refund and Return
               </a>
             </div>
-            <div class="flex mt-4 md:m-0">
-              <div class="-mx-4">
+            <div className="flex mt-4 md:m-0">
+              <div className="-mx-4">
                 <div className="font-medium">
                   &copy; {new Date().getFullYear()} Team Plan - All rights
                   reserved.

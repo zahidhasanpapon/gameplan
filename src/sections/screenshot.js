@@ -31,6 +31,8 @@ const Screenshot = () => {
 export default Screenshot
 
 const MainDiv = styled.div`
+  justify-content: center;
+  align-items: center;
   h1 {
     font-size: 64px;
     font-family: Roboto Slab;

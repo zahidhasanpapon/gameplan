@@ -9,8 +9,6 @@ const Review = () => {
   const [people, setPeople] = useState(data)
   const [index, setIndex] = useState(0)
 
-  console.log(people)
-
   useEffect(() => {
     const lastIndex = people.length - 1
     if (index < 0) {

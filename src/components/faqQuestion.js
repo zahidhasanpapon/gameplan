@@ -7,7 +7,7 @@ const Question = ({ title, info }) => {
   const [showInfo, setShowInfo] = useState(false)
   return (
     <Wrapper>
-      <article className="question">
+      <article className="question" onClick={() => setShowInfo(!showInfo)}>
         <header>
           <h4>{title}</h4>
           <button className="btn" onClick={() => setShowInfo(!showInfo)}>
@@ -23,6 +23,9 @@ const Question = ({ title, info }) => {
 export default Question
 
 const Wrapper = styled.div`
+  article {
+    cursor: pointer;
+  }
   .question {
     padding: 1rem 1.5rem;
     border: 2px solid #eae6eb;

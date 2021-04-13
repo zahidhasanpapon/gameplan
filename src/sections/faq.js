@@ -28,9 +28,9 @@ const Faq = () => {
   return (
     <StyledMain>
       <BgImage image={pluginImage} className="masthead">
+        <h1>FAQ</h1>
         <main className="main">
           <div className="containerDiv">
-            <h3>Question and Answers about Login</h3>
             <section className="info">
               {questions.map(question => {
                 return <SingleQuestion key={question.id} {...question} />
@@ -56,26 +56,26 @@ const StyledMain = styled.main`
     border-radius: 0.25rem;
     padding: 2.5rem 2rem;
     max-width: 920px;
-    display: grid;
-    gap: 1rem 2rem;
+    /* display: grid; */
+    /* gap: 1rem 2rem; */
 
-    h3 {
+    /* h3 {
       line-height: 1.2;
       font-weight: 500;
-    }
+    } */
   }
 
   @media (min-width: 992px) {
     .containerDiv {
-      display: grid;
-      grid-template-columns: 250px 1fr;
+      /* display: grid; */
+      /* grid-template-columns: 250px 1fr; */
     }
   }
   .main {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* min-height: 100vh; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
   }
 
   .info {
@@ -84,13 +84,19 @@ const StyledMain = styled.main`
   .masthead {
     width: 100%;
     min-height: 80vh;
-
-    justify-content: center;
-    align-items: center;
     padding: 3rem;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* padding: 3rem; */
+
     h1 {
       text-align: center;
-      text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+      font-size: 7vh;
+      font-family: Roboto Slab;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 84px;
+      text-align: center;
     }
   }
 `

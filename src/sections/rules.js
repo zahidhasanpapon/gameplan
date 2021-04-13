@@ -6,24 +6,26 @@ const Rules = () => {
   return (
     <MainDiv>
       <h1>How to Play</h1>
-      <div className="bg-white grid grid-cols-2">
-        <div>
-          <StaticImage
-            loading="eager"
-            src="../images/play-map.png"
-            alt="phone"
-            width={100}
-            placeholder="tracedSVG"
-            layout="constrained"
-            className="banner-phone mt-10"
-            as="section"
-          />
+      <div className="bg-white pl-96">
+        <div className="grid grid-cols-2">
+          <div>
+            <StaticImage
+              loading="eager"
+              src="../images/play-map.png"
+              alt="phone"
+              width={100}
+              placeholder="tracedSVG"
+              layout="constrained"
+              className="banner-phone mt-10"
+              as="section"
+            />
+          </div>
+          <p className="px-40">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate
+            modi aperiam esse similique iste, delectus rem voluptatibus placeat,
+            quia inventore error sequi, aspernatur ipsum explicabo?
+          </p>
         </div>
-        <p className="px-40">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate
-          modi aperiam esse similique iste, delectus rem voluptatibus placeat,
-          quia inventore error sequi, aspernatur ipsum explicabo?
-        </p>
       </div>
       <div className="grid grid-flow-col">
         <div>
@@ -42,7 +44,7 @@ const Rules = () => {
           <div>
             <StaticImage
               loading="eager"
-              src="../images/experience-download.png"
+              src="../images/play-1.png"
               alt="phone"
               width={100}
               placeholder="tracedSVG"
@@ -50,15 +52,12 @@ const Rules = () => {
               className="banner-phone"
               as="section"
             />
-            <div>
-              <h2>10M</h2>
-              <p>Download</p>
-            </div>
+            <div>Select Match</div>
           </div>
           <div>
             <StaticImage
               loading="eager"
-              src="../images/experience-user.png"
+              src="../images/play-2.png"
               alt="phone"
               width={100}
               placeholder="tracedSVG"
@@ -66,15 +65,12 @@ const Rules = () => {
               className="banner-phone"
               as="section"
             />
-            <div>
-              <h2>1M</h2>
-              <p>Active User</p>
-            </div>
+            <div>Create Team</div>
           </div>
           <div>
             <StaticImage
               loading="eager"
-              src="../images/experience-prize.png"
+              src="../images/play-3.png"
               alt="phone"
               width={100}
               placeholder="tracedSVG"
@@ -82,15 +78,12 @@ const Rules = () => {
               className="banner-phone"
               as="section"
             />
-            <div>
-              <h2>10M</h2>
-              <p>Prizes</p>
-            </div>
+            <div>Join match and play</div>
           </div>
           <div>
             <StaticImage
               loading="eager"
-              src="../images/experience-match.png"
+              src="../images/play-4.png"
               alt="phone"
               width={100}
               placeholder="tracedSVG"
@@ -98,10 +91,7 @@ const Rules = () => {
               className="banner-phone"
               as="section"
             />
-            <div>
-              <h2>10K</h2>
-              <p>Match Covered</p>
-            </div>
+            <div>Play casual games</div>
           </div>
         </div>
       </div>

@@ -28,12 +28,21 @@ const Banner = () => {
         <Container>
           <Flex>
             <HeaderTextGroup>
-              <h1>GAMEPLAN</h1>
-              <h2>#1 Fantasy App in Bangladesh</h2>
-              <HeaderForm onSubmit={handleSubmit}>
-                <HeaderInput placeholder="Enter phone number" />
-                <HeaderButton>Get Link</HeaderButton>
-              </HeaderForm>
+              <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                <div class="sm:text-center lg:text-left">
+                  <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
+                    <span class="block xl:inline">GAMEPLAN</span>
+                  </h1>
+                  <p class="mt-3 text-base text-white sm:mt-5 sm:text-2xl sm:max-w-xl sm:mx-auto md:mt-5 md:text-2xl lg:mx-0">
+                    #1 Fantasy App in Bangladesh
+                  </p>
+                  <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"></div>
+                </div>
+                <HeaderForm onSubmit={handleSubmit}>
+                  <HeaderInput placeholder="Enter phone number" />
+                  <HeaderButton>Get Link</HeaderButton>
+                </HeaderForm>
+              </main>
             </HeaderTextGroup>
             <ImageWrapper>
               <StaticImage
@@ -55,6 +64,17 @@ const Banner = () => {
 }
 
 export default Banner
+
+const StyledMain = styled.main`
+  /* min-height: 75vh; */
+  .masthead {
+    /* width: 100%; */
+    min-height: 75vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+`
 
 const Flex = styled.div`
   display: grid;
@@ -97,12 +117,6 @@ const HeaderTextGroup = styled.div`
   }
 `
 
-const StyledMain = styled.main`
-  .masthead {
-    width: 100%;
-    min-height: 80vh;
-  }
-`
 const HeaderForm = styled.form`
   display: flex;
   flex-direction: row;
@@ -167,11 +181,14 @@ const HeaderButton = styled.button`
   border-color: initial;
   border-image: initial;
   outline: 0px;
+
   &:hover {
     box-shadow: rgba(110, 120, 152, 0.22) 0px 2px 10px 0px;
   }
+
   @media (max-width: 991px) {
   }
+
   @media (max-width: 767px) {
     margin-left: 0;
   }

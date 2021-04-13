@@ -39,7 +39,7 @@ const NavItem = styled(Link)`
   }
 
   :hover {
-    color: #066ab8;
+    color: blue;
     ::after {
       width: 100%;
     }

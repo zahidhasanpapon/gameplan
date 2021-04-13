@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Footer = () => {
   return (
     <FooterWrapper>
-      <footer className="flex justify-center px-4 text-white ">
+      <footer className="flex justify-center px-4 text-white">
         <div className="container py-6 justify-center mx-auto max-w-7xl">
           <div className="flex flex-col items-center justify-between mt-6 md:flex-row">
             <div className="text-white">

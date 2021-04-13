@@ -17,8 +17,8 @@ const IndexPage = () => (
     <Experience />
     <Rules />
     <Screenshot />
-    <Review />
     <Faq />
+    <Review />
     <Contact />
   </Layout>
 )

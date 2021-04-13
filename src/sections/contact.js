@@ -35,7 +35,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <form>
-                    <div className="m-4">
+                    <div className="mt-4">
                       <input
                         className="shadow rounded-lg appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-inner bacgroundColorInputField"
                         type="text"
@@ -43,7 +43,7 @@ const Contact = () => {
                         placeholder="Your Name"
                       />
                     </div>
-                    <div className="m-4">
+                    <div className="mt-4">
                       <input
                         className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-inner bacgroundColorInputField"
                         type="text"
@@ -51,7 +51,7 @@ const Contact = () => {
                         placeholder="Email Address"
                       />
                     </div>
-                    <div className="m-4">
+                    <div className="mt-4">
                       <input
                         className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-inner bacgroundColorInputField"
                         type="text"
@@ -59,7 +59,7 @@ const Contact = () => {
                         placeholder="Your number"
                       />
                     </div>
-                    <div className="m-4">
+                    <div className="mt-4">
                       <input
                         className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-inner bacgroundColorInputField"
                         type="text"
@@ -67,7 +67,7 @@ const Contact = () => {
                         placeholder="Your message"
                       />
                     </div>
-                    <button class="uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">
+                    <button class="uppercase mx-auto shadow bg-yellow-600 hover:bg-yellow-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded mt-4">
                       Send
                     </button>
                   </form>
@@ -75,16 +75,21 @@ const Contact = () => {
               </div>
               <div className="px-14">
                 <div className="tracking-wide font-bold text-xl">Address</div>
-                <div className="flex flex-col">
+                <div>
                   <a
                     href="https://www.facebook.com/playgameplan/"
                     className="m-4"
+                    target="_"
                   >
                     <p>
-                      <RiFacebookCircleFill /> <span>playgameplan</span>
+                      <RiFacebookCircleFill /> playgameplan
                     </p>
                   </a>
-                  <a href="https://twitter.com/playgameplan" className="m-4">
+                  <a
+                    href="https://twitter.com/playgameplan"
+                    className="m-4"
+                    target="_"
+                  >
                     <p>
                       <AiFillTwitterCircle /> playgameplan
                     </p>
@@ -92,6 +97,7 @@ const Contact = () => {
                   <a
                     href="https://www.instagram.com/play_gameplan/"
                     className="m-4"
+                    target="_"
                   >
                     <p>
                       <FiInstagram /> play_gameplan

@@ -21,7 +21,7 @@ const query = graphql`
 const Rules = () => {
   const data = useStaticQuery(query)
   const nodes = data.allFile.nodes
-  const [images, setImage] = useState(nodes)
+  const [images, setImages] = useState(nodes)
   const [value, setValue] = useState(0)
 
   const { name } = images[value]

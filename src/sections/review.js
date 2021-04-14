@@ -108,13 +108,13 @@ const Wrapper = styled.div`
   .section-center {
     margin: 0 auto;
     margin-top: 2rem;
-    /* width: 80vw; */
+    width: 80vw;
     height: 50vh;
-    /* max-width: 800px; */
+    max-width: 800px;
     max-height: 50vh;
     text-align: center;
     position: relative;
-    /* display: flex; */
+    display: flex;
     overflow: hidden;
     margin-bottom: 100px;
   }

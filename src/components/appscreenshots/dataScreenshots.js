@@ -37,8 +37,8 @@ const DataScreenshots = () => {
   return (
     <>
       <App>
-        <button onClick={() => setIndex(index - 1)}>Next</button>
-        <button onClick={() => setIndex(index + 1)}>Prev</button>
+        <button onClick={() => setIndex(index - 1)}>Prev</button>
+        <button onClick={() => setIndex(index + 1)}>Next</button>
         <div>
           <section>
             <div className="cardSlider">

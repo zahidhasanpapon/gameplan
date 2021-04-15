@@ -26,7 +26,7 @@ const Faq = () => {
   const [questions, setQuestions] = useState(data)
 
   return (
-    <StyledMain>
+    <StyledMain id="section1">
       <BgImage image={pluginImage} className="masthead">
         <h1>FAQ</h1>
         <main className="main">

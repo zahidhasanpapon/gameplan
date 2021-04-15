@@ -23,7 +23,7 @@ const Contact = () => {
   `)
   const pluginImage = getImage(backgroundImage123)
   return (
-    <StyledMain>
+    <StyledMain id="contact">
       <BgImage image={pluginImage} className="masthead">
         <h1>Contact US</h1>
         <div className="mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl py-10 px-10 mt-16">

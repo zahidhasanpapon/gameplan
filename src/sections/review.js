@@ -29,7 +29,7 @@ const Review = () => {
   }, [index])
 
   return (
-    <Wrapper>
+    <Wrapper id="review">
       <h1>We are loved by our fans</h1>
       <section className="section">
         <div className="title"></div>

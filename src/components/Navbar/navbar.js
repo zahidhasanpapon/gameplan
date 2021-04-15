@@ -36,10 +36,15 @@ const Navigation = styled.nav`
   height: 8vh;
   display: flex;
   background-color: #066ab8;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
   position: sticky;
   justify-content: space-between;
   /* text-transform: uppercase; */
-  border-bottom: 2px solid #33333320;
+  /* border-bottom: 2px solid #33333320; */
+  padding-top: 100px;
   margin: 0 auto;
   padding: 0 5vw;
   z-index: 2;

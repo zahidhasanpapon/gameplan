@@ -1,22 +1,33 @@
 import * as React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { Link as ReactLink, animateScroll as Scroll } from "react-scroll"
 
 const NavbarLinks = () => {
   return (
     <>
-      <NavItem to="/">Home</NavItem>
-      <NavItem to="#about">About</NavItem>
-      <NavItem to="#rules">Rules</NavItem>
-      <NavItem to="#review">Review</NavItem>
-      <NavItem to="#contact">Contact</NavItem>
+      <NavItem to="/" onClick={() => Scroll.scrollToTop}>
+        Home
+      </NavItem>
+      <NavItem to="section1" smooth={true} duration={500}>
+        About
+      </NavItem>
+      <NavItem to="rules" smooth={true} duration={500}>
+        Rules
+      </NavItem>
+      <NavItem to="review" smooth={true} duration={500}>
+        Review
+      </NavItem>
+      <NavItem to="contact" smooth={true} duration={500}>
+        Contact
+      </NavItem>
     </>
   )
 }
 
 export default NavbarLinks
 
-const NavItem = styled(Link)`
+const NavItem = styled(ReactLink)`
   text-decoration: none;
   color: #fff;
   display: inline-block;
@@ -24,6 +35,7 @@ const NavItem = styled(Link)`
   margin: 0 1vw;
   transition: all 200ms ease-in;
   position: relative;
+  cursor: pointer;
 
   :after {
     position: absolute;

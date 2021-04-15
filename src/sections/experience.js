@@ -27,8 +27,8 @@ const Experience = () => {
         <BgImage image={pluginImage} className="masthead">
           <h1>We Provide Best Experience</h1>
           <Container>
-            <div className="classContainer container mx-auto">
-              <main className="grid grid-flow-col">
+            <Flex>
+              <HeaderTextGroup>
                 <div className="sm:text-center lg:text-left">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -97,6 +97,8 @@ const Experience = () => {
                     </div>
                   </div>
                 </div>
+              </HeaderTextGroup>
+              <ImageWrapper>
                 <div>
                   <StaticImage
                     loading="eager"
@@ -109,8 +111,8 @@ const Experience = () => {
                     as="section"
                   />
                 </div>
-              </main>
-            </div>
+              </ImageWrapper>
+            </Flex>
           </Container>
         </BgImage>
       </StyledMain>
@@ -119,6 +121,54 @@ const Experience = () => {
 }
 
 export default Experience
+const Flex = styled.div`
+  display: grid;
+  justify-content: space-space-between;
+  align-content: center;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    grid-gap: 64px;
+  }
+`
+
+const ImageWrapper = styled.div`
+  justify-self: end;
+  align-self: center;
+  @media (max-width: 767px) {
+    justify-self: center;
+  }
+`
+
+const HeaderTextGroup = styled.div`
+  margin: 0;
+
+  > div {
+    width: 120%;
+    margin-bottom: -4.5%;
+
+    @media (max-width: 767px) {
+      margin: 0 16px;
+    }
+  }
+
+  h1 {
+    margin: 0 0 24px;
+    color: white;
+  }
+
+  h2 {
+    margin-bottom: 24px;
+    font-size: 22px;
+    line-height: 30px;
+    color: white;
+  }
+
+  p {
+    margin-bottom: 48px;
+  }
+`
 
 const StyledMain = styled.main`
   margin: 0 auto;

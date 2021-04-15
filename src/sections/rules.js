@@ -28,10 +28,10 @@ const Rules = () => {
   const pathToImage = getImage(images[value])
 
   return (
-    <MainDiv>
+    <MainDiv id="rules">
       <h1>How to Play</h1>
       <div className="bg-white pl-96">
-        <div className="grid grid-cols-2">
+        {/* <div className="grid grid-cols-2">
           <div>
             <StaticImage
               loading="eager"
@@ -44,12 +44,12 @@ const Rules = () => {
               as="section"
             />
           </div>
-          <p className="px-40">
+          <p className="px-40 overflow-hidden">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate
             modi aperiam esse similique iste, delectus rem voluptatibus placeat,
             quia inventore error sequi, aspernatur ipsum explicabo?
           </p>
-        </div>
+        </div> */}
       </div>
       <div className="grid grid-flow-col">
         <div>
@@ -148,7 +148,7 @@ export default Rules
 
 const MainDiv = styled.div`
   background-color: #e4f3ff;
-
+  /* overflow: hidden; */
   h1 {
     font-size: 64px;
     font-family: Roboto Slab;

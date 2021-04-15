@@ -18,9 +18,19 @@ const NavLogo = () => {
 
 export default NavLogo
 
+// const LogoWrap = styled.div`
+//   margin: auto 0;
+//   flex: 0 1 36px;
+//   /* top: 50px; */
+
+//   @media (max-width: 768px) and (orientation: landscape) {
+//     flex: 0 1 25px;
+//   }
+// `
+
 const LogoWrap = styled.div`
   justify-self: flex-start;
   align-items: center;
-  margin-left: 24px;
+  margin: auto 0;
   cursor: pointer;
 `

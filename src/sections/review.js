@@ -89,7 +89,7 @@ const Wrapper = styled.div`
     /* width: 90vw; */
     margin: 5rem auto;
     max-width: 1170px;
-    background: white;
+    /* background: white; */
     padding-top: 2rem;
     height: 60vh;
   }

@@ -37,10 +37,14 @@ const DataScreenshots = () => {
   return (
     <>
       <App>
-        <button onClick={() => setIndex(index - 1)}>Prev</button>
-        <button onClick={() => setIndex(index + 1)}>Next</button>
+        <button className="prev-btn" onClick={() => setIndex(index - 1)}>
+          <FiChevronLeft />
+        </button>
+        <button className="next-btn" onClick={() => setIndex(index + 1)}>
+          <FiChevronRight />
+        </button>
         <div>
-          <section>
+          <section className="card-section">
             <div className="cardSlider">
               <div className="cardSliderWrapper">
                 {images.map((image, indexImage) => {
@@ -70,6 +74,50 @@ export default DataScreenshots
 const App = styled.div`
   text-align: center;
   position: relative;
+
+  .card-section {
+    margin: 5rem auto;
+    max-width: 900px;
+    background: white;
+    padding-top: 2rem;
+    height: 60vh;
+  }
+
+  .next-btn,
+  .prev-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    background: transparent;
+    color: var(--clr-white);
+    border: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    @media (min-width: 800px) {
+      & {
+        font-size: 4.5rem;
+      }
+    }
+  }
+  .next-btn:hover,
+  .prev-btn:hover {
+    color: var(--clr-primary-5);
+  }
+  .prev-btn {
+    left: 0;
+  }
+  .next-btn {
+    right: 0;
+  }
+  @media (min-width: 1000px) {
+    .prev-btn {
+      left: 1rem;
+    }
+    .next-btn {
+      right: 1rem;
+    }
+  }
 
   .cardSliderWrapper {
     display: flex;

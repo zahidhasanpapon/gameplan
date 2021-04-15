@@ -6,11 +6,11 @@ const Footer = () => {
     <FooterWrapper>
       <footer className="flex justify-center px-4 text-white">
         <div className="container py-6 justify-center mx-auto max-w-7xl">
-          <div className="flex flex-col items-center justify-between mt-6 md:flex-row">
-            <div className="text-white">
+          <div className="flex flex-col items-center justify-between mt-6 md:flex-row md:font-normal">
+            <div className="text-white md:flex-col">
               <a
                 href="#"
-                className="px-4 font-medium hover:underline hover:text-gray-400"
+                className="px-4 font-medium  hover:underline hover:text-gray-400"
               >
                 Terms & Condition
               </a>
@@ -24,12 +24,12 @@ const Footer = () => {
               <span> | </span>
               <a
                 href="#"
-                className="px-4 font-medium hover:underline hover:text-gray-400"
+                className="px-4 font-medium md:hidden md:text-center hover:underline hover:text-gray-400"
               >
                 Refund and Return
               </a>
             </div>
-            <div className="flex mt-4 md:m-0">
+            <div className="flex mt-4 px-10 md:m-0">
               <div className="-mx-4">
                 <div className="font-medium">
                   &copy; {new Date().getFullYear()} Team Plan - All rights

@@ -23,7 +23,7 @@ const Banner = () => {
   }
 
   return (
-    <StyledMain>
+    <StyledMain id="banner">
       <BgImage image={pluginImage} className="masthead">
         <Container>
           <Flex>
@@ -36,7 +36,18 @@ const Banner = () => {
                   <p className="mt-3 text-base text-white sm:mt-5 sm:text-2xl sm:max-w-xl sm:mx-auto md:mt-5 md:text-2xl lg:mx-0">
                     #1 Fantasy App in Bangladesh
                   </p>
-                  <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"></div>
+                  <button>
+                    <StaticImage
+                      loading="eager"
+                      src="../images/google-play-badge.png"
+                      alt="phone"
+                      width={200}
+                      placeholder="tracedSVG"
+                      layout="constrained"
+                      className="banner-phone"
+                      as="section"
+                    />
+                  </button>
                 </div>
                 <HeaderForm onSubmit={handleSubmit}>
                   <HeaderInput placeholder="Enter phone number" />

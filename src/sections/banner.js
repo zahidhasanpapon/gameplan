@@ -8,7 +8,7 @@ import { Container } from "../components/global"
 const Banner = () => {
   const { backgroundImage } = useStaticQuery(graphql`
     query {
-      backgroundImage: file(relativePath: { eq: "banner2.png" }) {
+      backgroundImage: file(relativePath: { eq: "banner.png" }) {
         childImageSharp {
           gatsbyImageData(width: 2000)
         }
@@ -77,6 +77,7 @@ const Banner = () => {
 export default Banner
 
 const StyledMain = styled.main`
+  padding-top: 8vh;
   /* min-height: 75vh; */
   .masthead {
     /* width: 100%; */

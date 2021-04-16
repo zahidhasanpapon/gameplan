@@ -9,7 +9,7 @@ const NavLogo = () => {
       <StaticImage
         src="../../images/gameplan-icon.png"
         alt="Gameplan Logo"
-        width={50}
+        width={70}
         placeholder="none"
       />
     </LogoWrap>
@@ -18,19 +18,19 @@ const NavLogo = () => {
 
 export default NavLogo
 
-// const LogoWrap = styled.div`
-//   margin: auto 0;
-//   flex: 0 1 36px;
-//   /* top: 50px; */
-
-//   @media (max-width: 768px) and (orientation: landscape) {
-//     flex: 0 1 25px;
-//   }
-// `
-
 const LogoWrap = styled.div`
-  justify-self: flex-start;
-  align-items: center;
   margin: auto 0;
-  cursor: pointer;
+  flex: 0 1 3rem;
+  /* top: 50px; */
+
+  @media (max-width: 768px) and (orientation: landscape) {
+    flex: 0 1 25px;
+  }
 `
+
+// const LogoWrap = styled.div`
+//   justify-self: flex-start;
+//   align-items: center;
+//   margin: auto 0;
+//   cursor: pointer;
+// `

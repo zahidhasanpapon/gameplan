@@ -3,49 +3,93 @@ import styled from "styled-components"
 
 const Footer = () => {
   return (
-    <FooterWrapper>
-      <footer className="flex justify-center px-4 text-white">
-        <div className="container py-6 justify-center mx-auto max-w-7xl">
-          <div className="flex flex-col items-center justify-between mt-6 md:flex-row md:font-normal">
-            <div className="text-white md:flex-col">
-              <a
-                href="#"
-                className="px-4 font-medium  hover:underline hover:text-gray-400"
-              >
-                Terms & Condition
-              </a>
-              <span> | </span>
-              <a
-                href="#"
-                className="px-4 font-medium hover:underline hover:text-gray-400"
-              >
-                Privacy Policy
-              </a>
-              <span> | </span>
-              <a
-                href="#"
-                className="px-4 font-medium md:hidden md:text-center hover:underline hover:text-gray-400"
-              >
-                Refund and Return
-              </a>
-            </div>
-            <div className="flex mt-4 px-10 md:m-0">
-              <div className="-mx-4">
-                <div className="font-medium">
-                  &copy; {new Date().getFullYear()} Team Plan - All rights
-                  reserved.
-                </div>
-              </div>
-            </div>
+    <Wrapper>
+      <div className="container-div">
+        <div className="main-div">
+          <div className="left-div">
+            <a href="#">Terms & Condition</a>
+            <span> | </span>
+            <a href="#">Privacy Policy</a>
+            <span> | </span>
+            <a href="#">Refund and Return</a>
+          </div>
+          <div className="right-div">
+            &copy; {new Date().getFullYear()} Team Plan - All rights reserved.
           </div>
         </div>
-      </footer>
-    </FooterWrapper>
+      </div>
+    </Wrapper>
   )
 }
 
 export default Footer
 
-const FooterWrapper = styled.div`
+const Wrapper = styled.footer`
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  display: flex;
+  /* padding: 1rem; */
+  /* position: fixed; */
+  text-align: center;
   background: #212121;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  .container-div {
+    justify-content: center;
+    margin: auto;
+    max-width: 80rem;
+    width: 100%;
+    margin: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .main-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  .left-div {
+    @media (min-width: 768px) {
+      flex-direction: column;
+    }
+    @media (max-width: 640px) {
+      flex-direction: column;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &:hover {
+      --tw-text-opacity: 1;
+      color: rgba(156, 163, 175, var(--tw-text-opacity));
+    }
+  }
+
+  .right-div {
+    display: flex;
+    margin-top: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    @media (min-width: 768px) {
+      margin: 0px;
+    }
+  }
 `

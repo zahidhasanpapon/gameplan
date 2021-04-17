@@ -1,8 +1,8 @@
 import * as React from "react"
 
 import { BgImage } from "gbimage-bridge"
-import { getImage, StaticImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
+import { getImage, StaticImage } from "gatsby-plugin-image"
 
 import styled from "styled-components"
 
@@ -124,12 +124,14 @@ const Wrapper = styled.section`
   /* margin-top: 100vh; */
   /* width: 100%; */
   /* min-height: 100vh; */
+  margin: 0 auto;
+  min-height: calc(100vh - (6rem + 4rem));
+  padding: 3rem;
 
   .background-image {
-    padding-top: 100vh;
+    /* padding-top: 100vh; */
     width: 100%;
-    min-height: 100vh;
-    padding: 3rem;
+    min-height: 80vh;
   }
 
   .container-div {

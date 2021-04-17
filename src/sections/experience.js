@@ -20,7 +20,7 @@ const Experience = () => {
   const bgImage = getImage(backgroundImage)
 
   return (
-    <Wrapper>
+    <Wrapper id="experience">
       <BgImage image={bgImage} className="background-image">
         <Title title="We Provide Best Experience" />
         <div className="container-div">

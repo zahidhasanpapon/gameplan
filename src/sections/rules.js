@@ -1,9 +1,13 @@
 import * as React from "react"
 import { useState } from "react"
-import styled from "styled-components"
-import { StaticImage } from "gatsby-plugin-image"
+
 import { useStaticQuery, graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+import styled from "styled-components"
+
+import Title from "../components/title"
 
 const query = graphql`
   {
@@ -28,35 +32,14 @@ const Rules = () => {
   const pathToImage = getImage(images[value])
 
   return (
-    <MainDiv id="rules">
-      <h1>How to Play</h1>
-      <div className="bg-white pl-96">
-        {/* <div className="grid grid-cols-2">
-          <div>
-            <StaticImage
-              loading="eager"
-              src="../images/play-map.png"
-              alt="phone"
-              width={100}
-              placeholder="tracedSVG"
-              layout="constrained"
-              className="banner-phone mt-10"
-              as="section"
-            />
-          </div>
-          <p className="px-40 overflow-hidden">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate
-            modi aperiam esse similique iste, delectus rem voluptatibus placeat,
-            quia inventore error sequi, aspernatur ipsum explicabo?
-          </p>
-        </div> */}
-      </div>
-      <div className="grid grid-flow-col">
-        <div>
+    <Wrapper id="rules">
+      <Title title="How to Play" />
+      <div className="bottom-container-div">
+        <div className="left-bottom-div">
           <GatsbyImage image={pathToImage} alt={name} />
         </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
+        <div className="right-bottom-div">
+          <div className="number-button">
             <button onClick={() => setValue(0)}>
               <StaticImage
                 loading="eager"
@@ -70,31 +53,9 @@ const Rules = () => {
               />
               <div>Select Match</div>
             </button>
-            {/* Testing */}
-            {/* <div>
-              {images.map((item, index) => {
-                const { name } = item
-                return (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setValue(index)
-                    }}
-                    className={`jobBtn ${index === value && "activeBtn"}`}
-                  >
-                    {name}
-                  </button>
-                )
-              })}
-            </div> */}
-            {/* Testing */}
           </div>
-          <div>
-            <button
-              onClick={() => {
-                setValue(1)
-              }}
-            >
+          <div className="number-button">
+            <button onClick={() => setValue(1)}>
               <StaticImage
                 loading="eager"
                 src="../images/play-2.png"
@@ -102,13 +63,11 @@ const Rules = () => {
                 width={100}
                 placeholder="tracedSVG"
                 layout="constrained"
-                className="banner-phone"
-                as="section"
               />
               <div>Create Team</div>
             </button>
           </div>
-          <div>
+          <div className="number-button">
             <button onClick={() => setValue(2)}>
               <StaticImage
                 loading="eager"
@@ -117,13 +76,11 @@ const Rules = () => {
                 width={100}
                 placeholder="tracedSVG"
                 layout="constrained"
-                className="banner-phone"
-                as="section"
               />
               <div>Join match and play</div>
             </button>
           </div>
-          <div>
+          <div className="number-button">
             <button onClick={() => setValue(3)}>
               <StaticImage
                 loading="eager"
@@ -132,29 +89,54 @@ const Rules = () => {
                 width={100}
                 placeholder="tracedSVG"
                 layout="constrained"
-                className="banner-phone"
-                as="section"
               />
               <div>Play casual games</div>
             </button>
           </div>
         </div>
       </div>
-    </MainDiv>
+    </Wrapper>
   )
 }
 
 export default Rules
 
-const MainDiv = styled.div`
+const Wrapper = styled.section`
   background-color: #e4f3ff;
-  /* overflow: hidden; */
-  h1 {
-    font-size: 64px;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: bold;
-    line-height: 84px;
-    text-align: center;
+  margin: 0 auto;
+  padding: 3rem;
+
+  .bottom-container-div {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40 px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .right-bottom-div {
+      display: grid;
+      padding-top: 4rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      @media (max-width: 769px) {
+        padding-top: 1px;
+      }
+
+      .number-button {
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+        margin: 18px 10px 40px;
+      }
+      button {
+        outline: none;
+      }
+    }
   }
 `

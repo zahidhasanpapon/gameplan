@@ -1,8 +1,9 @@
 import * as React from "react"
-import { useState } from "react"
+// import { useState } from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
-import { Link as ReactLink, animateScroll as Scroll } from "react-scroll"
+// import { Link } from "gatsby"
+// import { Link as ReactLink, animateScroll as Scroll } from "react-scroll"
+import { Link as ReactLink } from "react-scroll"
 
 const NavbarLinks = ({ toggle }) => {
   console.log(toggle)
@@ -11,7 +12,7 @@ const NavbarLinks = ({ toggle }) => {
       <NavItem to="banner" onClick={toggle}>
         Home
       </NavItem>
-      <NavItem to="section1" onClick={toggle} smooth={true} duration={500}>
+      <NavItem to="faq" onClick={toggle} smooth={true} duration={500}>
         About
       </NavItem>
       <NavItem to="rules" smooth={true} duration={500}>

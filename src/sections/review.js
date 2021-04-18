@@ -1,9 +1,12 @@
 import * as React from "react"
 import { useState, useEffect } from "react"
+
 import styled from "styled-components"
-import data from "../components/reviewData"
+
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
-import { FaQuoteRight } from "react-icons/fa"
+
+import Title from "../components/title"
+import data from "../components/reviewData"
 
 const Review = () => {
   const [people, setPeople] = useState(data)
@@ -30,9 +33,8 @@ const Review = () => {
 
   return (
     <Wrapper id="review">
-      <h1>We are loved by our fans</h1>
+      <Title title="We are loved by our fans" />
       <section className="section">
-        <div className="title"></div>
         <div className="section-center">
           {people.map((person, personIndex) => {
             const { id, image, name, title, quote } = person
@@ -54,7 +56,6 @@ const Review = () => {
                 <h4>{name}</h4>
                 <p className="title">{title}</p>
                 <p className="text">{quote}</p>
-                <FaQuoteRight className="icon" />
               </article>
             )
           })}
@@ -74,7 +75,15 @@ export default Review
 
 const Wrapper = styled.div`
   background: #e4f3ff;
-  min-height: calc(100vh - (6rem + 4rem));
+  padding: 3rem;
+
+  .section {
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 0 40 px;
+    padding-top: 2rem;
+    overflow: auto;
+  }
 
   h1 {
     font-size: 64px;
@@ -83,15 +92,6 @@ const Wrapper = styled.div`
     font-weight: bold;
     line-height: 84px;
     text-align: center;
-  }
-
-  .section {
-    /* width: 90vw; */
-    margin: 5rem auto;
-    max-width: 1170px;
-    /* background: white; */
-    padding-top: 2rem;
-    height: 60vh;
   }
 
   @media screen and (min-width: 992px) {
@@ -108,15 +108,15 @@ const Wrapper = styled.div`
   .section-center {
     margin: 0 auto;
     margin-top: 2rem;
-    width: 80vw;
-    height: 50vh;
+    /* width: 80vw; */
+    height: 450px;
     max-width: 800px;
     max-height: 50vh;
     text-align: center;
     position: relative;
     display: flex;
     overflow: hidden;
-    margin-bottom: 100px;
+    margin-bottom: 5rem;
   }
 
   .person-img {

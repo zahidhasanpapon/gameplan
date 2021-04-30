@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { getImage, StaticImage } from "gatsby-plugin-image"
 import { BgImage } from "gbimage-bridge"
@@ -18,9 +19,27 @@ const Banner = () => {
 
   const pluginImage = getImage(backgroundImage)
 
-  const handleSubmit = event => {
+  // Form Start
+  const [phone, setPhone] = useState(0)
+
+  const submitHanlder = async event => {
     event.preventDefault()
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ phone }),
+    }
+    const response = await fetch(
+      "http://localhost:5000/link/sendlink",
+      requestOptions
+    )
+      .then(alert("Query Sent."))
+      .catch(error => console.error("Error: ", error))
+    await response.json()
+    return response
   }
+
+  // Form End
 
   return (
     <StyledMain id="banner">
@@ -49,8 +68,15 @@ const Banner = () => {
                     />
                   </button>
                 </div>
-                <HeaderForm onSubmit={handleSubmit}>
-                  <HeaderInput placeholder="Enter phone number" />
+                <HeaderForm onSubmit={submitHanlder}>
+                  <HeaderInput
+                    type="tel"
+                    name="number"
+                    id="number"
+                    placeholder="Enter Phone Number"
+                    value={phone}
+                    onChange={e => setPhone(e.target.value)}
+                  />
                   <HeaderButton>Get Link</HeaderButton>
                 </HeaderForm>
               </main>
@@ -63,8 +89,6 @@ const Banner = () => {
                 width={500}
                 placeholder="tracedSVG"
                 layout="constrained"
-                className="banner-phone"
-                as="section"
               />
             </ImageWrapper>
           </Flex>

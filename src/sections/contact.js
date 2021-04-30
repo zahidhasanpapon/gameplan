@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useState } from "react"
 
 import { BgImage } from "gbimage-bridge"
 import { graphql, useStaticQuery } from "gatsby"
@@ -25,6 +26,28 @@ const Contact = () => {
 
   const bgImage = getImage(backgroundImage)
 
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState(0)
+  const [message, setMessage] = useState("")
+
+  const submitHanlder = async event => {
+    event.preventDefault()
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, phone, message }),
+    }
+    const response = await fetch(
+      "https://gameplan-rest-api.herokuapp.com/visitors/add",
+      requestOptions
+    )
+      .then(alert("Query Sent."))
+      .catch(error => console.error("Error: ", error))
+    await response.json()
+    return response
+  }
+
   return (
     <Wrapper id="contact">
       <BgImage image={bgImage} className="background-image">
@@ -32,13 +55,15 @@ const Contact = () => {
         <div className="container-div">
           <div className="left-div">
             <div className="title">Get In Touch</div>
-            <form action="">
+            <form action="" onSubmit={submitHanlder}>
               <div className="form-row">
                 <input
                   type="text"
                   id="name"
                   placeholder="Your Name"
                   className="input-field"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
                 />
               </div>
               <div className="form-row">
@@ -46,13 +71,17 @@ const Contact = () => {
                   type="text"
                   placeholder="Email Address"
                   className="input-field"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                 />
               </div>
               <div className="form-row">
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Your Number"
                   className="input-field"
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
                 />
               </div>
               <div className="form-row">
@@ -60,9 +89,13 @@ const Contact = () => {
                   type="text"
                   placeholder="Your Message"
                   className="input-field"
+                  value={message}
+                  onChange={e => setMessage(e.target.value)}
                 />
               </div>
-              <button className="left-form-button">Send</button>
+              <button type="submit" className="left-form-button">
+                Send
+              </button>
             </form>
           </div>
           <div className="right-div">

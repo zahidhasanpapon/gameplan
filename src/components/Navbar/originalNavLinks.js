@@ -6,7 +6,6 @@ import styled from "styled-components"
 import { Link as ReactLink } from "react-scroll"
 
 const NavbarLinks = ({ toggle }) => {
-  console.log(toggle)
   return (
     <>
       <NavItem to="banner" onClick={toggle}>

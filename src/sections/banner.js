@@ -5,6 +5,7 @@ import { getImage, StaticImage } from "gatsby-plugin-image"
 import { BgImage } from "gbimage-bridge"
 import styled from "styled-components"
 import { Container } from "../components/global"
+import bdFlag from "../images/bdFlag.png"
 
 const Banner = () => {
   const { backgroundImage } = useStaticQuery(graphql`
@@ -21,7 +22,9 @@ const Banner = () => {
 
   // Form Start
   const [phone, setPhone] = useState(0)
-
+  const bdCode = 88
+  const concatinatedPhoneNumber = `${bdCode}${phone}`
+  console.log(concatinatedPhoneNumber)
   const submitHanlder = async event => {
     event.preventDefault()
     const requestOptions = {
@@ -69,12 +72,22 @@ const Banner = () => {
                   </button>
                 </div>
                 <HeaderForm onSubmit={submitHanlder}>
+                  {/* <span className="flex items-center leading-normal bg-white lg:px-3 border-0 rounded rounded-none text-xl text-gray-600">
+                    <i className="pr-2 lg:pr-2 font-title">
+                      <img
+                        src={bdFlag}
+                        style={{ width: "40px", height: "24px" }}
+                        alt=""
+                      />
+                    </i>
+                    +88
+                  </span> */}
                   <HeaderInput
                     type="tel"
                     name="number"
                     id="number"
                     placeholder="Enter Phone Number"
-                    value={phone}
+                    // value={phone}
                     onChange={e => setPhone(e.target.value)}
                   />
                   <HeaderButton>Get Link</HeaderButton>

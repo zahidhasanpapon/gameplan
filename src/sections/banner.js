@@ -5,7 +5,7 @@ import { getImage, StaticImage } from "gatsby-plugin-image"
 import { BgImage } from "gbimage-bridge"
 import styled from "styled-components"
 import { Container } from "../components/global"
-import bdFlag from "../images/bdFlag.png"
+// import bdFlag from "../images/bdFlag.png"
 
 const Banner = () => {
   const { backgroundImage } = useStaticQuery(graphql`
@@ -17,14 +17,14 @@ const Banner = () => {
       }
     }
   `)
-
+  // console.log(backgroundImage)
   const pluginImage = getImage(backgroundImage)
 
   // Form Start
   const [phone, setPhone] = useState(0)
-  const bdCode = 88
-  const concatinatedPhoneNumber = `${bdCode}${phone}`
-  console.log(concatinatedPhoneNumber)
+  // const bdCode = 88
+  // const concatinatedPhoneNumber = `${bdCode}${phone}`
+  // console.log(concatinatedPhoneNumber)
   const submitHanlder = async event => {
     event.preventDefault()
     const requestOptions = {

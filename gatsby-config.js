@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
+    require.resolve(`${__dirname}/plugins/source-plugin`),
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {

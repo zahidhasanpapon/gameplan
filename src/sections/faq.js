@@ -8,22 +8,39 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
 import Title from "../components/title"
-import data from "../components/faqData"
+// import data from "../components/faqData"
 import SingleQuestion from "../components/faqQuestion"
 
 const Faq = () => {
-  const { backgroundImage } = useStaticQuery(graphql`
+  const backgroundImage = useStaticQuery(graphql`
     query {
-      backgroundImage: file(relativePath: { eq: "stadium-background.jpeg" }) {
+      file(relativePath: { eq: "stadium-background.jpeg" }) {
         childImageSharp {
           gatsbyImageData(width: 2000)
         }
       }
+      allFaqList {
+        nodes {
+          _id
+          question
+          answer
+        }
+      }
     }
   `)
+  const {
+    allFaqList: { nodes: faqlist },
+  } = backgroundImage
+  // console.log(backgroundImage)
 
-  const bgImage = getImage(backgroundImage)
-  const [questions, setQuestions] = useState(data)
+  const {
+    file: { childImageSharp },
+  } = backgroundImage
+  const bgImage = getImage(childImageSharp)
+
+  // console.log(data)
+  // console.log(faqlist)
+  const [questions] = useState(faqlist)
 
   return (
     <Wrapper id="faq">
@@ -32,7 +49,7 @@ const Faq = () => {
         <div className="main-container">
           <div>
             {questions.map(question => {
-              return <SingleQuestion key={question.id} {...question} />
+              return <SingleQuestion key={question._id} {...question} />
             })}
           </div>
         </div>

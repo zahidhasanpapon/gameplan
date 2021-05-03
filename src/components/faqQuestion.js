@@ -4,18 +4,18 @@ import { useState } from "react"
 import styled from "styled-components"
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai"
 
-const Question = ({ title, info }) => {
+const Question = ({ question, answer }) => {
   const [showInfo, setShowInfo] = useState(false)
   return (
     <Wrapper>
       <article className="question" onClick={() => setShowInfo(!showInfo)}>
         <header>
-          <h4>{title}</h4>
+          <h4>{question}</h4>
           <button className="btn" onClick={() => setShowInfo(!showInfo)}>
             {showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}
           </button>
         </header>
-        {showInfo && <p>{info}</p>}
+        {showInfo && <p>{answer}</p>}
       </article>
     </Wrapper>
   )

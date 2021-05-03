@@ -7,11 +7,11 @@ const Footer = () => {
       <div className="container-div">
         <div className="main-div">
           <div className="left-div">
-            <a href="#">Terms & Condition</a>
+            <a href="/">Terms & Condition</a>
             <span> | </span>
-            <a href="#">Privacy Policy</a>
+            <a href="/">Privacy Policy</a>
             <span> | </span>
-            <a href="#">Refund and Return</a>
+            <a href="/">Refund and Return</a>
           </div>
           <div className="right-div">
             &copy; {new Date().getFullYear()} Team Plan - All rights reserved.

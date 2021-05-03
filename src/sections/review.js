@@ -9,7 +9,7 @@ import Title from "../components/title"
 import data from "../components/reviewData"
 
 const Review = () => {
-  const [people, setPeople] = useState(data)
+  const [people] = useState(data)
   const [index, setIndex] = useState(0)
 
   useEffect(() => {

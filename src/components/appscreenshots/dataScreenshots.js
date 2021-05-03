@@ -21,7 +21,7 @@ const query = graphql`
 const DataScreenshots = () => {
   const data = useStaticQuery(query)
   const nodes = data.allFile.nodes
-  const [images, setImages] = useState(nodes)
+  const [images] = useState(nodes)
   const [index, setIndex] = useState(2)
 
   useEffect(() => {

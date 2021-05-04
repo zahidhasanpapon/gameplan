@@ -17,6 +17,7 @@ const fetch = require("node-fetch")
 exports.onPreInit = () => console.log("Loaded gatsby-starter-plugin")
 
 const NODE_TYPE = "FaqList"
+const NODE_TYPE_TWO = "ContactList"
 
 exports.sourceNodes = async ({
   actions,
@@ -50,6 +51,9 @@ exports.sourceNodes = async ({
        */
   )
   const results = await response.json()
+  const resposeTwo = await fetch("http://localhost:5000/reviews")
+  const resultsTwo = await resposeTwo.json()
+  // console.log(resultsTwo)
   // console.log(results)
 
   results.forEach(result => {
@@ -61,6 +65,20 @@ exports.sourceNodes = async ({
       children: [],
       internal: {
         type: NODE_TYPE,
+        content: JSON.stringify(result),
+        contentDigest: createContentDigest(result),
+      },
+    })
+  })
+
+  resultsTwo.forEach(result => {
+    actions.createNode({
+      ...result,
+      id: createNodeId(`{NODE_TYPE_TWO}-${result._id}`),
+      parent: null,
+      children: [],
+      internal: {
+        type: NODE_TYPE_TWO,
         content: JSON.stringify(result),
         contentDigest: createContentDigest(result),
       },

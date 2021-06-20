@@ -1,15 +1,13 @@
 import * as React from "react"
-import { useState, useEffect } from "react"
 import styled from "styled-components"
-import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 import Title from "../components/title"
-import data from "../components/reviewData"
-//
+import { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 
 const Review = () => {
-  //
-  const reviewContactData = useStaticQuery(graphql`
+  // Data from graphQL
+  const reviewDataFromAPI = useStaticQuery(graphql`
     {
       allContactList {
         nodes {
@@ -23,24 +21,23 @@ const Review = () => {
       }
     }
   `)
+  // initializing
   const {
-    allContactList: { nodes: allReviewList },
-  } = reviewContactData
-  console.log(allReviewList)
-  const [reviewListDetails] = useState(allReviewList)
-  //
-  const [people] = useState(data)
+    allContactList: { nodes: reviewListAPI },
+  } = reviewDataFromAPI
+  // console.log(reviewListAPI)
+  const [reviewListDetails] = useState(reviewListAPI)
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
-    const lastIndex = people.length - 1
+    const lastIndex = reviewListDetails.length - 1
     if (index < 0) {
       setIndex(lastIndex)
     }
     if (index > lastIndex) {
       setIndex(0)
     }
-  }, [index, people])
+  }, [index.reviewListDetails])
 
   useEffect(() => {
     let slider = setInterval(() => {
@@ -49,38 +46,35 @@ const Review = () => {
     return () => {
       clearInterval(slider)
     }
-  }, [index])
-
+  }, [reviewListDetails])
   return (
     <Wrapper id="review">
       <Title title="We are loved by our fans" />
       <section className="section">
         <div className="section-center">
-          {/* start */}
-          {/* {reviewListDetails.map(n => {
-            return <p>name:{n.name}</p>
-          })} */}
-          {/* end */}
-          {people.map((person, personIndex) => {
-            const { id, image, name, title, quote } = person
-
+          {reviewListDetails.map((person, personIndex) => {
+            const { _id, image, name, quote, rating, team } = person
             let position = "nextSlide"
             if (personIndex === index) {
               position = "activeSlide"
             }
             if (
               personIndex === index - 1 ||
-              (index === 0 && personIndex === people.length - 1)
+              (index === 0 && personIndex === reviewListDetails.length - 1)
             ) {
               position = "lastSlide"
             }
 
             return (
-              <article className={position} key={id}>
-                <img src={image} alt={name} className="person-img" />
-                <h4>{name}</h4>
-                <p className="title">{title}</p>
-                <p className="text">{quote}</p>
+              <article className={position} key={rating}>
+                {/* <div className="shadow-lg rounded-2xl p-4 max-w-xl m-center bg-white"> */}
+                <div className="bg-white">
+                  <h4>{name}</h4>
+                  <p className="title">Team Name: {team}</p>
+                  <p>Rating: {rating}</p>
+                  <p className="text">{quote}</p>
+                </div>
+                {/* </div> */}
               </article>
             )
           })}

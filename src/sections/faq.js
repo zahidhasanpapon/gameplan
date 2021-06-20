@@ -32,7 +32,7 @@ const Faq = () => {
     allFaqList: { nodes: faqlist },
   } = backgroundImage
   // console.log(backgroundImage)
-
+  // console.log(faqlist)
   const {
     file: { childImageSharp },
   } = backgroundImage
@@ -49,6 +49,9 @@ const Faq = () => {
         <div className="main-container">
           <div>
             {questions.map(question => {
+              {
+                console.log(question._id)
+              }
               return <SingleQuestion key={question._id} {...question} />
             })}
           </div>
